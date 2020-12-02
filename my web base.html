@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Web Base</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!--style.css- подключение стилей-->
+<body>
+  <script type="text/javascript">
+
+    /* функция добавления ведущих нулей */
+    /* (если число меньше десяти, перед числом добавляем ноль) */
+    function zero_first_format(value) {
+      if (value < 10) {
+        value = '0' + value;
+      }
+      return value;
+    }
+
+    /* функция получения текущей даты и времени */
+    function date_time() {
+      var current_datetime = new Date();
+      var day = zero_first_format(current_datetime.getDate());
+      var month = zero_first_format(current_datetime.getMonth() + 1);
+      var year = current_datetime.getFullYear();
+      var hours = zero_first_format(current_datetime.getHours());
+      var minutes = zero_first_format(current_datetime.getMinutes());
+      var seconds = zero_first_format(current_datetime.getSeconds());
+
+      return day + "." + month + "." + year + " " + hours + ":" + minutes + ":" + seconds;
+    }
+    setInterval(function () {
+      /* выводим текущую дату и время на сайт в блок с id "current_date_time_block1" */
+      document.getElementById('current_date_time_block1').innerHTML = date_time();
+    }, 1000);
+  </script> <!--скрипт время онлайн-->
+  <div class="navbar1"><!--navbar1- навигационное меню сверху-->
+    <a href="#HTML" class="HTML">
+      <img src="img/html-logo.png" alt="HTML5" height="35">
+    </a>
+    <a href="#CSS" class="CSS">
+      <img src="img/CSS-logo.png" alt="CSS" height="35">
+    </a>
+    <a href="#JavaScript" class="JavaScript">
+      <img src="img/JS-logo.png" alt="JavaScript" height="35">
+    </a>
+    <a href="#SQL" class="SQL">
+      <img src="img/SQL-logo.png" alt="SQL" height="35">
+    </a>
+    <a href="#PHP" class="PHP">
+      <img src="img/php-logo.png" alt="PHP" height="35">
+    </a>
+    <span class="TIME" id="current_date_time_block1"></span>
+    <!--span class=TIME здесь время онлайн-->
+    <!-- 
+        <a href="#Testing">Testing</a>
+   -->
+  </div>
+  <h1 id="Main" class="Main">MY WEB BASE</h1>
+  <h2 id="HTML" class="html2"> HTML | примеры </a></h2>
+  <h2 id="Soderjaniye" class="Soderjaniye">Содержание</h2>
+  <div class="navbar2"><!--navbar2-нижнее меню-->
+    <button class="button1"><!--кнопка-->
+      <a href="#Main" >М</a><!--ссылка корень-->
+    </button>
+    <button class="button2">
+      <a href="#Soderjaniye">С</a>
+    </button>
+    <button class="button3">
+      <a href="#Resursy">Р</a>
+    </button>
+    <a href="https://www.google.com/" target="_blank">
+      <img src="img/google logo.png" alt="G-logo" wedth="14" height="14">
+    </a>
+     <a href="#Structure"> СТРУКТУРА HTML </a>
+    <a href="#Text">TEXT</a>
+    <a href="#Spiski">СПИСКИ</a>
+    <a href="#Table">TABLE</a>
+    <a href="#Functions">ФУНКЦИИ</a>
+    <a href="#Strukture elements">СТРУКТУРНЫЕ ЭЛЕМЕНТЫ</a>
+    <a href="#MAP">MAP</a>
+    <a href="#To do">To Do</a>
+   </div>
+  <h3 class="Resursy" id="Resursy">РЕСУРСЫ
+  </h3>
+  <div>
+    <a href="https://www.google.com/" target="_blank">
+      <img src="img/googlelogo_color_272x92dp.png" alt="Google" height="35">
+    </a><br>
+    <a href="http://htmlbook.ru/html" target="_blank">htmlbook.ru
+    </a><br>
+    <a href="https://html5book.ru/" target="_blank">html5book
+    </a><br>
+    <a href="https://basicweb.ru/" target="_blank">Basic
+    </a><br>
+    <a href="https://html5css.ru/" target="_blank">HTLM5CSS</a>
+  </div>
+  <div class="Structure">
+    <table border="1">
+      <caption id="Structure">
+        <a href="https://www.google.com/" target="_blank">
+          <img src="img/google logo.png" alt="G-logo" wedth="14" height="14"></a>
+        СТРУКТУРА HTML
+        <button>
+          <a href="#Main">М</a>
+        </button>
+        <button>
+          <a href="#Soderjaniye">С</a>
+        </button>
+        <button>
+          <a href="#Resursy">Р</a>
+        </button>
+      </caption>
+      <tr>
+        <th>ЗНАЧЕНИЕ</th>
+        <th>CODE</th>
+      </tr>
+      <tr>
+        <td>Комментарий</td>
+        <td>&lt;!--TEXT--&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяет тип документа</td>
+        <td> &lt;!DOCTYPE&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют HTML документ</td>
+        <td>&lt;html&gt;&lt;/html&gt;</td>
+      </tr>
+      <tr>
+        <td>Содержат информацию о документе, инструкции</td>
+        <td>&lt;head&gt; &lt;/head&gt;</td>
+      </tr>
+      <tr>
+        <td>Содержит информацию о документе</td>
+        <td>&lt;meta&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют основной заголовок документа</td>
+        <td> &lt;title&gt; &lt;/title&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют тело документа</td>
+        <td>&lt;body&gt; &lt;/body&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяет ссылку на внешний источник</td>
+        <td> &lt;link /&gt; </td>
+      </tr>
+      <tr>
+        <td>Предназначен для документов, в которых используется относительный адрес <br> и эти документы могут
+          переноситься в
+          другую папку или даже на другой компьютер без потери связи
+        </td>
+        <td>&lt;base&gt; &lt;/base&gt;</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div class="Strukture elements">
+    <table border="1">
+      <caption id="Strukture elements">
+        <a href="https://www.google.com/" target="_blank">
+          <img src="img/google logo.png" alt="G-logo" wedth="14" height="14"></a>
+        СТРУКТУРНЫЕ ЭЛЕМЕНТЫ
+        <button>
+          <a href="#Main">М</a>
+        </button>
+        <button>
+          <a href="#Soderjaniye">С</a>
+        </button>
+        <button>
+          <a href="#Resursy">Р</a>
+        </button></caption>
+      <th>ЗНАЧЕНИЕ </th>
+      <th>CODE</th>
+      <tr>
+        <td> Определяют внешний контент </td>
+        <td> &lt;article&gt; &lt;/article&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Дополнительный контент</td>
+        <td> &lt;aside&gt; &lt;/aside&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют секцию документа</td>
+        <td> &lt;div&gt; &lt;/div&gt;</td>
+      </tr>
+      <tr>
+        <td>Нижняя часть документа</td>
+        <td> &lt;footer&gt; &lt;/footer&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Верхняя секция документа </td>
+        <td> &lt;header&gt; &lt;/header&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют группу заголовков</td>
+        <td> &lt;hgroup&gt; &lt;/hgroup&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют группу ссылок</td>
+        <td> &lt;nav&gt; &lt;/nav&gt;
+          <span class="html5">html5</span>
+        </td>
+      <tr>
+        <td>предназначен для основного содержимого документа (основной контент).
+        </td>
+        <td>&lt;main&gt; &lt;/mail&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      </tr>
+      <tr>
+        <td>Определяют секцию документа</td>
+        <td> &lt;section&gt;&lt;/section&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют линейную секцию в документе</td>
+        <td> &lt;span&gt;&lt;/span&gt;</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div class="Text">
+    <table border="1">
+      <caption id="Text">
+        <a href="https://www.google.com/" target="_blank">
+          <img src="img/google logo.png" alt="G-logo" wedth="14" height="14"></a>
+        TEXT
+        <button>
+          <a href="#Main">М</a>
+        </button>
+        <button>
+          <a href="#Soderjaniye">С</a>
+        </button>
+        <button>
+          <a href="#Resursy">Р</a>
+        </button>
+      </caption>
+      <tr>
+        <th>ЗНАЧЕНИЕ</th>
+        <th>CODE</th>
+      </tr>
+      <tr>
+        <td>Определяют <abbr title="аббревиатура">аббревиатуру</abbr> аббревиатуру</td>
+        <td>&lt;abbr&gt; &lt;/abbr&gt;</td>
+      </tr>
+      <tr>
+        <td>Отображают текст в
+          <address>формате адреса</address>
+        </td>
+        <td>&lt;address&gt; &lt;address&gt;</td>
+      </tr>
+      <tr>
+        <td>Отображают часть текста <b>полужирным</b> шрифтом</td>
+        <td> &lt;b&gt; &lt;/b&gt; </td>
+      </tr>
+      <tr>
+        <td>Определяют <bdo dir="rtl">направление</bdo> текста</td>
+        <td>&lt;bdo&gt; &lt;/bdo&gt;</td>
+      </tr>
+      <tr>
+        <td>указывает фрагмент текста, который должен быть изолирован от изменения направления вывода текста.<br> Такое
+          поведение важно для текстов, одновременно содержащих разные языки, читающихся слева направо и справа налево.
+        </td>
+        <td>&lt;bdi&gt; &lt;/bdi&gt;
+          <span class="html5">html5</span> <br>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют блочную цитату</td>
+        <td>&lt;blockquote&gt; &lt;/blockquote&gt;</td>
+      </tr>
+      <tr>
+        <td>Увеличивает <big>размер</big> шрифта на единицу по сравнению с обычным текстом. </td>
+        <td>&lt;big&lt; &lt;/big&lt;</td>
+      </tr>
+      <tr>
+        <td>Осуществляет перенос строки</td>
+        <td>&lt;br&gt;</td>
+      <tr>
+        <td>Определяют надпись над</td>
+        <td>&lt;caption&gt; &lt;/caption&gt;</td>
+      </tr>
+      <tr>
+        <td>Выравнивает содержимое контейнера по центру относительно родительского элемента.
+        </td>
+        <td>&lt;center&gt; &lt;/center&gt;</td>
+      </tr>
+      <tr>
+        <td>Преобразуют текст в <cite>наклонный</cite> (курсивный)</td>
+        <td>&lt;cite&gt; &lt;/cite&gt;</td>
+      </tr>
+      <tr>
+        <td>Преобразуют текст в <code>моноширинный</code></td>
+        <td>&lt;code&gt; &lt;/code&gt;</td>
+      </tr>
+      <tr>
+        <td>Отображают <del>перечеркнутый</del> текст</td>
+        <td>&lt;del&gt; &lt;/del&gt;</td>
+      </tr>
+      <tr>
+        <td>Преобразуют шрифт в <dfn>наклонный</dfn></td>
+        <td>&lt;dfn&gt; &lt;/dfn&gt;</td>
+      </tr>
+      <tr>
+        <td>Преобразуют текст в <em>наклонный</em> (курсивный)</td>
+        <td>&lt;em&gt; &lt;/em&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют заголовки</td>
+        <td>&lt;h1&gt;-&lt;h6&gt; </td>
+      </tr>
+      <tr>
+        <td>Создает горизонтальную линию
+          <hr>
+        </td>
+        <td>&lt;hr&gt;</td>
+      </tr>
+      <tr>
+        <td>Преобразуют текст в <i>наклонный</i> (курсивный)</td>
+        <td> &lt;i&gt; &lt;/i&gt; </td>
+      </tr>
+      <tr>
+        <td>Преобразуют текст в <ins>подчеркнутый</ins></td>
+        <td> &lt;ins&gt; &lt;/ins&gt; </td>
+      </tr>
+      <tr>
+        <td>Преобразуют текст в <kbd>моноширинный</kbd></td>
+        <td> &lt;kbd&gt; &lt;/kbd&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют <mark>важную часть</mark> текста</td>
+        <td> &lt;mark&gt; &lt;mark&gt;
+          <span class="html5">html5</span><br>
+        </td>
+      <tr>
+        <td>Определяют параграф</td>
+        <td>&lt;p&gt;&lt;/p&gt; </td>
+      </tr>
+      <tr>
+        <td>Определяют
+          <pre>отформатированный</pre> текст
+        </td>
+        <td> &lt;pre&gt; &lt;/pre&gt; <br>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют <q>короткую цитату</q></td>
+        <td> &lt;q&gt; &lt;/q&gt; </td>
+      </tr>
+      <tr>
+        <td>Используется для вывода текста в браузерах, которые не поддерживают тег &lt;ruby&gt;.</td>
+        <td>&lt;rp&gt;&lt;/rp&gt;
+          <span class="html5">html5</span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>добавляет аннотацию
+          <ruby>
+            <rt>сверху</rt>
+            или снизу от текста, заключенного в контейнер &lt;ruby&gt; &lt;ruby&gt;
+            <span class="html5">html5</span><br>
+          </ruby>
+        </td>
+        <td>&lt;rt&gt;&lt;/rt&gt;
+          <span class="html5">html5</span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>предназначен для добавления небольшой аннотации сверху или снизу от заданного текста.
+        </td>
+        <td>&lt;ruby&gt;&lt;/ruby&gt;</td>
+      </tr>
+      <tr>
+        <td><s>Не поддерживаются в HTML 5</s></td>
+        <td> &lt;s&gt; &lt;/s&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Преобразуют текст в <samp>моноширинный</samp></td>
+        <td> &lt;samp&gt; &lt;/samp&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Преобразуют обычный текст в <small> текст более мелкий</small></td>
+        <td> &lt;small&gt; &lt;/small&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Преобразуют шрифт в <strong>полужирный</strong></td>
+        <td> &lt;strong&gt; &lt;/strong&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Преобразуют обычный текст <sub> в текст в нижнем индексе </sub></td>
+        <td>&lt;sub&gt; &lt;/sub&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Преобразуют обычный текст <sup> в текст в верхнем индексе</sup>
+        <td> &lt;sup&gt; &lt;/sup&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют <textarea name="" id="" cols="30" rows="1">текстовое поле</textarea></td>
+        <td> &lt;textarea&gt; &lt;/textarea&gt;
+        </td>
+      </tr>
+      <tr>
+        <td><u>Не поддерживаются в HTML 5 </u></td>
+        <td> &lt;u&gt; &lt;/u&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>указывает браузеру место,<wbr>где <wbr>допускается<wbr> делать<wbr> перенос<wbr>  в тексте, если этого требует ширина родительского элемента.
+        </p>
+        </td>
+        <td>&lt;wbr&gt;
+          <span class="html5">html5</span> <br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div class="Spiski">
+    <table border="1">
+      <caption id="Spiski">
+        <a href="https://www.google.com/" target="_blank">
+          <img src="img/google logo.png" alt="G-logo" wedth="14" height="14"></a>
+        СПИСКИ
+        <button>
+          <a href="#Main">М</a>
+        </button>
+        <button>
+          <a href="#Soderjaniye">С</a>
+        </button>
+        <button>
+          <a href="#Resursy">Р</a>
+        </button>
+      </caption>
+      <tr>
+        <td>Определяют определение списка определений</td>
+        <td> &lt;dd&gt; &lt;/dd&gt;</td>
+      </tr>
+      <tr>
+        <td>Создают список определений</td>
+        <td> &lt;dl&gt; &lt;/dl&gt; </td>
+      </tr>
+      <tr>
+        <td>Oпределяют определяемый термин</td>
+        <td> &lt;dt&gt; &lt;/dt&gt;</td>
+      </tr>
+      <tr>
+        <td>Создает список, содержащий названия директорий (системные папки)</td>
+        <td>&lt;dir&gt; &lt;/dir&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют элемент (пункт) списка</td>
+        <td>&lt;li&gt; &lt;/li&gt; </td>
+      </tr>
+      <tr>
+        <td> Определяют упорядоченный (нумерованный) список</td>
+        <td> &lt;ol&gt; &lt;/ol&gt;</td>
+      </tr>
+      <tr>
+        <td> Определяют элемент выпадающего списка
+          <select size="3" name="hero">
+            <option disabled>Выберите героя</option>
+            <option value="t1" selected>Чебурашка</option>
+            <option value="t2">Крокодил Гена</option>
+            <option value="t3">Шапокляк</option>
+            <option value="t4">Крыса Лариса</option>
+          </select>
+        </td>
+        <td>&lt;option&gt;&lt;/option&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют выпадающий список</td>
+        <td> &lt;select&gt; &lt;/select&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют ненумерованный список</td>
+        <td> &lt;ul&gt; &lt;/ul&gt; </td>
+      </tr>
+      <tr>
+        <td>Определяют список-меню</td>
+        <td> &lt;menu&gt;&lt;/menu&gt; </td>
+      </tr>
+      <tr>
+        <td>Определяет список предопределенных вариантов для ввода.
+          <input list="Name">
+          <datalist id="Name">
+            <!-- список предопределенных вариантов для ввода -->
+            <option value="Krishna"> </option>
+            <!-- закрывающие элементы </option> в данном случае можно не использовать -->
+            <option value="Radha"> </option>
+            <option value="Rama"> </option>
+          </datalist>
+        </td>
+        <td>&lt;details&gt; &lt;/details&gt;
+          <span class="html5">html5</span> <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <details>
+            <summary>Показать ? </summary>
+            Пожалуйста <img src="img/html-logo.png" alt="HTML" width="80" height="80">
+            <details>
+              <summary>Ещё? </summary>
+              Пожалуйста<img src="img/CSS-logo.png" alt="CSS" width="80" height="80">
+              <details>
+                <summary>Давай ещЁ разок ?</summary>
+                АГА ВОТ ТЫ ГДЕ <img src="img/JS-logo.png" alt="JavaScript" width="80" height="80">
+              </details>
+            </details>
+          </details>
+        </td>
+        <td> &lt;summary&gt; &lt;/summary&gt;</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div class="Table">
+    <table border="1">
+      <caption id="Table">
+        <a href="https://www.google.com/" target="_blank">
+          <img src="img/google logo.png" alt="G-logo" wedth="14" height="14"></a>
+        TABLE
+        <button>
+          <a href="#Main">М</a>
+        </button>
+        <button>
+          <a href="#Soderjaniye">С</a>
+        </button>
+        <button>
+          <a href="#Resursy">Р</a>
+        </button>
+      </caption>
+      <th>ЗНАЧЕНИЕ</th>
+      <th>CODE</th>
+      <tr>
+        <td>Определяет свойства колонок таблицы</td>
+        <td> &lt;col&gt;</td>
+      </tr>
+      <tr>
+        <td>Группируют колонки таблицы</td>
+        <td>&lt;colgroup&gt; &lt;/colgroup&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют таблицу</td>
+        <td> &lt;table&gt; &lt;/table&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют тело таблицы</td>
+        <td> &lt;tbody&gt; &lt;/tbody&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют ячейку таблицы</td>
+        <td> &lt;td&gt; &lt;td&gt; </td>
+      </tr>
+      <tr>
+        <td> Определяют нижнюю часть таблицы</td>
+        <td> &lt;tfoot&gt; &lt;/tfoot&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют заголовок таблицы</td>
+        <td> &lt;th&gt; &lt;/th&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют верхнюю часть таблицы</td>
+        <td> &lt;thead&gt; &lt;/thead&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют табличный ряд</td>
+        <td> &lt;tr&gt; &lt;/tr&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <fieldset title="Form">
+            <legend>Fieldset</legend>
+            Предназначен для группирования элементов формы.
+            Например, один блок может быть предназначен для ввода текстовой информации, <br>
+            <input type="checkbox">а другой — для флажков.
+          </fieldset>
+        </td>
+        <td>&lt;fieldset&gt; &lt;fieldset&gt; </td>
+      </tr>
+      <tr>
+        <td>
+          <fieldset>
+            <legend>(для Legend)</legend>Заголовок для тегов
+          </fieldset>
+        </td>
+        <td> &lt;legend&gt; &lt;/legend&gt; </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div class="Functions">
+    <table border="1">
+      <caption id="Functions">
+        <a href="https://www.google.com/" target="_blank">
+          <img src="img/google logo.png" alt="G-logo" wedth="14" height="14"></a>
+        ФУНКЦИИ
+        <button>
+          <a href="#Main">М</a>
+        </button>
+        <button>
+          <a href="#Soderjaniye">С</a>
+        </button>
+        <button>
+          <a href="#Resursy">Р</a>
+        </button>
+      </caption>
+      <th>ЗНАЧЕНИЕ</th>
+      <th>CODE</th>
+      <tr>
+        <td>Определяют гиперссылку</td>
+        <td> &lt;a&gt; &lt;/a&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют фоновый звук
+          <audio src="audio/_01-01  Bhaktivaibhava Swami  Bhoga-Arati.mp3" controls="controls">
+          </audio>
+        </td>
+        <td>&lt;audio&gt; &lt;/audio&gt;
+          <span class="html5">html5</span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>Создают
+          <button>кнопку</button>
+        </td>
+        <td>&lt;button&gt; &lt;/button&gt;</td>
+      </tr>
+      <tr>
+        <td>Создает область, в которой при помощи JavaScript можно рисовать разные объекты, выводить изображения,
+          трансформировать их и менять свойства
+        </td>
+        <td> &lt;canvas&gt;&lt;/canvas&gt;
+          <span class="html5">html5</span> <br>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют
+          <button id="openDialog">диалог</button>
+          <dialog>
+            <p align="center">
+              <br>
+              Hare Krishna Hare Krishna Krishna Krishna Hare Hare
+              Hare Rama Hare Rama Rama Rama Hare Hare
+            </p>
+            <p><button id="closeDialog">Закрыть окно</button></p>
+          </dialog>
+          <script>
+            var dialog = document.querySelector('dialog')
+            document.querySelector(
+              '#openDialog'
+            ).onclick = function () {
+              dialog.show() // Показываем диалоговое окно
+            }
+            document.querySelector(
+              '#closeDialog'
+            ).onclick = function () {
+              dialog.close() // Прячем диалоговое окно
+            }
+          </script>
+        </td>
+        <td>&lt;dialog&gt; &lt;/dialog&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td> Внедряет интерактивный объект
+          <embed src="video/HDV_0057.MP4"><br>
+          <embed src="img/googlelogo_color_272x92dp.png" wedth="50" height="50"></td>
+        <td>&lt;embed&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Группируют элементы страницы
+          <figure>
+            <figcaption>Google 1</figcaption>
+            <img src="img/google logo.png" alt="Google" width="80" height="80">
+            <figcaption>Google 2</figcaption>
+          </figure>
+        </td>
+        <td> &lt;figure&gt; &lt;/figure&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Содержит описание для тега &lt;figure&gt;</td>
+        <td>&lt;figcaption&gt; &lt;/figcaption&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют <time> 12-11-2020 дату или 21:55 время</time></td>
+        <td> &lt;time&gt; &lt;/time&gt;
+          <span class="html5">html5</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяет изображение <br>
+          <img src="img/google logo.png" alt="G-logo" wedth="100" height="100">
+        </td>
+        <td> &lt;img/&gt; <br>
+        </td>
+      </tr>
+      <tr>
+        <td>Создают документ внутри документа
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/InSenLOKtSQ" frameborder="0"
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </td>
+        <td> &lt;iframe&gt; &lt;/iframe&gt;</td>
+      </tr>
+      <tr>
+        <td>Создаeт поля для ввода данных, кнопки <input type="text" placeholder="text"></td>
+        <td> &lt;input&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяет область в которую выводится информация, преимущественно с помощью скриптов.
+        </td>
+        <td>&lt;output&gt; &lt;/output&gt;
+          <span class="html5">html5</span> <br>
+        </td>
+      </tr>
+      <tr>
+        <td>Используется для генерации пары ключей — закрытого и открытого.
+        </td>
+        <td>&lt;keygen&gt;&lt;/keygen&gt;
+          <span class="html5">html5</span> <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Используется для вывода значения в некотором известном диапазоне.
+          <p>Температура воды</p>
+          <meter value="0" max="100" low="10" high="60">Низкая</meter>
+          <meter value="30" max="100" low="10" high="60">Нормальная</meter>
+          <meter value="80" max="100" low="10" high="60">Горячая</meter>
+          <meter value="100" max="100">Кипяток</meter>
+        </td>
+        <td>&lt;meter&gt; &lt/meter&gt;
+          <span class="html5">html5</span><br>
+        </td>
+      </tr>
+      <tr>
+        <td> Внедряют видео в web-страницу <br>
+          <video controls src="video/HDV_0057.MP4" poster="img/google logo.png" preload="none" width="150" height="150">
+          </video>
+        </td>
+        <td> &lt;video&gt; &lt;/video&gt;
+          <span class="html5">html5</span> <br>
+        </td>
+      </tr>
+      <tr>
+        <td>Представляет собой контейнер, внутри которого располагаются теги &lt;option&gt; объединенные в одну группу.
+        </td>
+        <td> &lt;optgroup&gt; &lt;/optgroup&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Используется для отображения прогресса завершенности задачи. Изменение значения происходит через JavaScript.
+          <progress max="100" value="73">
+            Загружено на <span id="value">25</span>%
+          </progress></td>
+        <td>&lt;progress&gt; &lt;/progress&gt;
+          <span class="html5">html5</span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют скрипт</td>
+        <td> &lt;script&gt; &lt;/script&gt;</td>
+      </tr>
+      <tr>
+        <td>Предупредят если браузер не читает скрипты</td>
+        <td> &lt;noscript&gt; &lt;/noscript&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют стилевые описания</td>
+        <td> &lt;style&gt; &lt;/style&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют переменную</td>
+        <td> &lt;var&gt; &lt;/var&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Внедряет объекты в web-страницу
+          <object data="https://www.youtube.com/embed/InSenLOKtSQ" width="500" height="300"></object>
+        </td>
+        <td> &lt;object&gt;</td>
+      </tr>
+      <tr>
+        <td>Используется для определения параметров для плагинов, встроенных в элемент &lt;object&gt;</td>
+        <td> &lt;param&gt;</td>
+      </tr>
+      <tr>
+        <td>Определяют HTML форму. Форма предназначена для обмена данными между пользователем и сервером.</td>
+        <td> &lt;form&gt; &lt;/form&gt; </td>
+      </tr>
+      <tr>
+        <td>Определяют лeйбу для тега &lt;input&gt;</td>
+        <td> &lt;label&gt; &lt;/label&gt;</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div class="MAP">
+    <table border="1">
+      <caption id="MAP">
+        <a href="https://www.google.com/" target="_blank">
+          <img src="img/google logo.png" alt="G-logo" wedth="14" height="14"></a>
+        MAP
+        <button>
+          <a href="#Main">М</a>
+        </button>
+        <button>
+          <a href="#Soderjaniye">С</a>
+        </button>
+        <button>
+          <a href="#Resursy">Р</a>
+        </button>
+      </caption>
+      <br>
+      <th>ЗНАЧЕНИЕ </th>
+      <th>CODE</th>
+      <tr>
+        <td>Определяeт активную область навигационной карты</td>
+        <td> &lt;area /&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>Определяют навигационную карту</td>
+        <td> &lt;map&gt; &lt;/map&gt;</td>
+      </tr>
+    </table>
+  </div>
+  <div class="To-do">
+    <table border="2">
+      <caption id="To do">Зделать</caption>
+      <th>To do</th>
+      <th>Done</th>
+      <tr>
+        <td>surce</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td> track</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>картинки под словами</td>
+        <td>img</td>
+      </tr>
+      <tr>
+        <td>подсказки под словами </td>
+        <td>title or dialog or </td>
+      </tr>
+      <tr>
+        <td>значок возле тегов html5</td>
+        <td>img</td>
+      </tr>
+      <tr>
+        <td>примеры с тегами</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>атрибуты всех значений</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <caption align="center">ПРИМЕРЫ HTML</caption>
+  <iframe src="https://basicweb.ru/html/html_tags.php" frameborder="0" width="1300" height="640"></iframe>
+  </div>
+</body>
+
+</html>
